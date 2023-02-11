@@ -1,0 +1,14 @@
+<div>
+  <form [formGroup]="logindata" (ngSubmit)="getdata(logindata.value)">
+    <label style="font-size: 25px; font-weight: bold; color: rgb(84, 84, 236);">Login</label>
+    <label for="email">Email:</label>
+    <span style="color: red;" *ngIf="logindata.controls.email.invalid && logindata.controls.email && logindata.controls.email.touched ">This field is required</span>
+    <input type="email" name="email" required formControlName="email" />
+
+    <label for="password">Password:</label>
+    <span style="color: red;"*ngIf="logindata.controls.password.invalid && logindata.controls.password && logindata.controls.password.touched ">This field isrequired</span>
+    <input type="password" name="password" required formControlName="password"/>
+
+    <button type="submit" [disabled]="logindata.invalid" (click)="navigateToDashboard()">Login</button>
+  </form>
+</div>

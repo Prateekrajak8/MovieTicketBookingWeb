@@ -1,0 +1,9 @@
+<div class="parent">
+    <div *ngFor="let movie of movies">
+     <div [routerLink]="['/book-ticket',movie.id]" class="card" (click)="showMovieDetail(movie.id)">
+      <img [src]="movie.posterUrl"/>
+      <h4 style=" font-family: cursive; font-size: 18px; font-weight: bold; color: rgb(255, 128, 0); padding-left: 10px;">{{ movie.title }}</h4>
+      <p style="padding-left: 10px;">{{movie.dis}}</p> 
+     </div>
+  </div>
+</div>

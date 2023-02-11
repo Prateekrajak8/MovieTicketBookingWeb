@@ -1,0 +1,20 @@
+<div class="parent">
+    <form [formGroup]="userdata" (ngSubmit)="getdata(userdata.value)">
+      <label style="font-size: 25px; font-weight: bold; color: rgb(84, 84, 236);">Signin</label>
+       <label for="name">Name:</label>
+       <span style="color: red;" *ngIf="userdata.controls.name.invalid && userdata.controls.name && userdata.controls.name.touched ">This field is required</span>
+       <input type="text" name="name" formControlName="name" />
+       
+       <label for="email">Email:</label>
+       <span style="color: red;" *ngIf="userdata.controls.email.invalid && userdata.controls.email && userdata.controls.email.touched ">This field is required</span>
+
+       <input type="email" name="email" formControlName="email" />
+       
+       <label for="password">Password:</label>
+       <span style="color: red;" *ngIf="userdata.controls.password.invalid && userdata.controls.password && userdata.controls.password.touched ">This field is required</span>
+
+       <input type="password" name="password" formControlName="password" />
+       
+       <button type="submit" [disabled]="userdata.invalid" (click)="navigateToLogin()">Submit</button>
+     </form>
+ </div>
